@@ -23,7 +23,7 @@ training, maka ML dapat melakukan proses klasifikasi atau prediksi terhadap data
 yang telah dilakukan.
 
 Klasifikasi adalah metode dalam ML yang digunakan oleh mesin untuk memilah atau mengklasifikasikan objek
-berdasarkan ciri tertentu sebagaimana manusia mencoba membedakan benda satu dengan yang lain. Sedangkan prediksi digunakan oleh mesin untuk menerka keluaran dari suatu data
+berdasarkan ciri tertentu sebagaimana manusia mencoba membedakan benda satu dengan yang lain\citep{shalev-shwartz_ben-david_2014}. Sedangkan prediksi digunakan oleh mesin untuk menerka keluaran dari suatu data
 masukan. 
 % Contoh penggunaan referensi dari gambar yang diinputkan
 % \emph{Discovery}, Gambar \ref{fig:SpaceShuttle}, merupakan \lipsum[17][1-9]
@@ -31,7 +31,7 @@ masukan.
 \section{Deep Learning}
 Deep Learning (DL) adalah salah satu bidang yang muncul dari penelitian ML.
 DL memungkinkan model komputasi yang tersusun dari banyak lapisan pemrosesan pembelajaran untuk mempelajari representasi dari data dengan berbagai level.
-DL dapat menemukan struktur sulit yang terdapat di dalam kumpulan data yang besar dengan menggunakan algoritma backpropagation.
+DL dapat menemukan struktur sulit yang terdapat di dalam kumpulan data yang besar dengan menggunakan algoritma backpropagation\citep{DBLP:journals/corr/ZhangBHRV16}.
 Struktur yang didapatkan menunjukkan paramater internal apa yang harus diubah oleh mesin agar dapat menghitung representasi di setiap layer berdasarkan representasi dari layer sebelumnya.
 
 DL juga melakukan pendekatan dalam penyelesaian masalah dengan menggunakan konsep hierarki.
@@ -39,7 +39,7 @@ Dengan konsep tersebut, komputer mampu mempelajari sebuah konsep yang kompleks d
 konsep-konsep yang lebih sederhana.
 
 \section{Convolutional Neural Network}
-Convolutional Neural Network (CNN) merupakan variasi dari Multilayer Perceptron yang terinspirasi dari jaringan saraf manusia.
+Convolutional Neural Network (CNN) merupakan variasi dari Multilayer Perceptron yang terinspirasi dari jaringan saraf manusia\citep{CNN2017}.
 Nama convolutional neural network dapat menggambarkan bahwa jaringan ini menggunakan operasi matematika yang disebut konvolusi.
 CNN merupakan pengembangan dari artificial neural network yang saat ini diklaim sebagai model terbaik untuk memecahkan masalah
 seputar object recognition dan detection.
@@ -47,11 +47,11 @@ seputar object recognition dan detection.
 Secara teknis, CNN adalah arsitektur yang bisa di training
 dan terdiri dari beberapa tahap. Input dan output dari masingmasing tahap berupa array yang disebut feature map atau peta
 fitur. Output dari masing-masing tahap adalah feature map hasil pengolahan dari semua lokasi pada input. Struktur CNN dibangun
-dari tiga jenis layer utama yaitu convolution layer, pooling layer, dan activation function.
+dari tiga jenis layer utama yaitu convolution layer, pooling layer, dan activation function\citep{CNN2017}.
 
 \section{Computer Vision}
 Computer vision adalah suatu cara menganalisis citra dan video oleh komputer untuk memperoleh hasil sebagaimana yang bisa dilakukan manusia.
-Pada hakikatnya, computer vision mencoba meniru cara kerja sistem visual manusia (Human Vision). Manusia melihat objek dengan indra penglihatan (mata),
+Pada hakikatnya, computer vision mencoba meniru cara kerja sistem visual manusia (Human Vision)\citep{IJAIR42}. Manusia melihat objek dengan indra penglihatan (mata),
 lalu citra objek diteruskan ke otak untuk diinterpretasi sehingga manusia mengerti objek apa yang tampak dalam pandangan matanya.
 Hasil interpretasi ini kemudian digunakan untuk pengambilan keputusan.
 Pada komputer, hal ini dilakukan dengan melakukan penangkapan citra atau video melalui kamera, lalu dilakukan proses analisis terhadap gambar tersebut.
@@ -60,12 +60,156 @@ citra atau video yang ditangkap oleh kamera. Computer vision dibuat agar dapat m
 dan pengambilan keputusan yang sulit jika dilakukan dalam kondisi
 yang spesifik.
 
+\section{Image Processing}
+Di dalam bidang komputer terdapat tiga bidang studi yang
+berkaitan dengan data citra, namun dengan tujuan yang berbeda\citep{Umam2016},
+yaitu:
+
+\begin{enumerate}
+  \item Pengenalan Pola
+    
+  Pengenalan pola mengelompokkan data numerik dan simbolik (termasuk citra) secara otomatis oleh mesin (dalam hal ini
+  komputer). Tujuan pengelompokan adalah untuk mengenali
+  suatu objek di dalam citra. Manusia bisa mengenali objek
+  yang dilihatnya karena otak manusia telah belajar mengklasifikasi objek-objek di alam sehingga mampu membedakan suatu objek dengan objek lainnya. Kemampuan sistem visual
+  manusia inilah yang dicoba ditiru oleh mesin. Komputer menerima masukan berupa citra objek yang akan diidentifikasi,
+  memproses citra tersebut, dan memberikan keluaran berupa
+  deskripsi objek di dalam citra.
+
+  \item Grafika Komputer
+  
+  Grafika Komputer bertujuan menghasilkan citra dengan primitifprimitif geometri seperti garis, lingkaran dan sebagainya. Primitifprimitif geometri tersebut memerlukan data deskriptif untuk
+  melukis elemen-elemen gambar. Contoh data deskriptif adalah koordinat titik, panjang garis, jari-jari lingkaran, tebal
+  garis, warna, dan sebagainya. Grafika komputer memainkan
+  peranan penting dalam visualisasi dan virtual reality.
+
+  \item Pengolahan Citra
+    
+  Pengolahan Citra bertujuan memperbaiki kualitas citra agar
+  mudah diinterpretasi oleh manusia atau mesin (komputer).
+  Teknik-teknik pengolahan citra mentransformasikan citra menjadi citra lain. Jadi, masukannya adalah citra dan keluarannya
+  juga citra, namun dengan kualitas yang lebih baik daripada
+  citra masukan
+\end{enumerate}
+
 \section{FaceNet}
 FaceNet menggunakan (CNN). CNN ditraining sedemikian rupa sehingga jarak kuadrat L2 antara vector embeddings sesuai dengan kesamaan wajah.
 Gambar yang digunakan untuk training telah diskalakan sebelumnya, lalu diubah dan dipotong di sekitar area wajah.
 Aspek penting lain dari FaceNet adalah loss functionnya, FaceNet menggunakan triplet loss function dibandingkan model-model lain yang hanya menggunakan single loss function.
-Untuk menghitung triplet loss, membutuhkan 3 gambar sebagai acuan yaitu anchor, positif dan negatif.
+Untuk menghitung triplet loss, membutuhkan 3 gambar sebagai acuan yaitu anchor, positif dan negatif\citep{Facenet2015}.
 
+\section{Docker}
+Docker adalah layanan yang menyediakan kemampuan untuk mengemas dan menjalankan sebuah aplikasi dalam sebuah lingkungan terisolasi yang disebut dengan container.
+Dengan adanya isolasi dan keamanan yang memadai memungkinkan kamu untuk menjalankan banyak container di waktu yang bersamaan pada host tertentu.
+Docker diperkenalkan pada tahun 2013 oleh Solomon Hykes pada acara PyCon. Beberapa bulan setelahnya docker secara resmi diluncurkan, tepatnya pada tahun 2014.
+\subsection{Fitur - fitur Docker}
+\begin{itemize}
+  \item Docker engine
+  
+  Docker engine adalah core dari docker, Digunakan untuk membuat image dan container.
+
+  \item Docker Hub
+  
+  Docker hub adalah registry yang berisikan kumpulan dari image-image yang disimpan di datacenter milik docker.
+  Dengan menggunakan docker hub ini memungkinkan pengguna untuk dapat mengumpulkan dan mendapatkan image.  
+
+  \item Docker Compose
+  
+  Docker compose adalah salah satu fitur unggulan yang berfungsi untuk menjalankan beberapa container atau disebut multi-container sehingga dapat menghemat banyak waktu.
+
+\end{itemize}
+
+\subsection{Kelebihan}
+\begin{itemize}
+  \item Konfigurasi yang sederhana
+  
+  Docker memiliki konfigurasi yang cukup sederhana dan dapat disesuaikan dengan kebutuhan aplikasi yang sedang dikembangkan.
+  Dengan beberapa kode, Ia akan membuat environment sendiri yang berbeda dengan environment dari server utama.
+
+  \item Tingkat keamanan yang baik
+  
+  Docker memastikan aplikasi yang sedang berjalan tidak dapat memengaruhi container.
+  Selain itu, ia juga memiliki fitur keamanan lain seperti pengaturan OS host mount dengan akses read-only sehingga tidak akan mengubah konfigurasi apa pun,
+  kecuali user yang memiliki akses secara penuh.
+
+  \item Dapat dijalankan pada platform cloud
+  
+  Docker dapat dijalankan pada platform cloud, Sehingga penggunanya akan lebih fleksibel dalam melakukan porting aplikasi.
+
+  \item Debugging yang lebih cepat
+  
+  Waktu yang dibutuhkannya untuk debugging docker container tergolong cepat, yaitu sekitar satu menit saja untuk melakukan proses debug pada Sandbox.
+
+\end{itemize}
+
+\subsection{Shell Linux}
+
+Shell adalah program yang menghubungkan user dengan sistem operasi dalam hal ini kernel (inti sistem operasi),
+Umumnya shell menyediakan prompt sebagai user interface, tempat dimana user meng-inputkan perintah-perintah yang diinginkan baik berupa perintah internal shell (internal command),
+ataupun perintah eksekusi suatu file progam (eksternal command), selain itu shell memungkinkan user menyusun sekumpulan perintah pada sebuah atau beberapa file untuk dieksekusi sebagai program.
+Tidak seperti sistem operasi lain yang hanya menyediakan 1 atau 2 shell, sistem operasi dari keluarga unix misalnya linux sampai saat ini dilengkapi oleh banyak shell dengan kumpulan perintah yang sangat banyak, sehingga memungkinkan pemakai memilih shell mana yang paling baik untuk membantu menyelesaikan pekerjaannya, atau dapat pula berpindah-pindah dari shell yang satu ke shell yang lain dengan mudah.
+
+\section{Vue JS}
+Vue JS adalah salah satu framework atau library dari JavaScript yang digunakan untuk untuk membuat tampilan (interface) pada website agar tampak lebih interaktif.
+Fungsi lain dari Vue JS adalah membuat SPA (Single Page Application). Apabila digunakan pada arsitektur MVC (Model – View – Controller), maka framework ini menempati pada posisi View yang berjalan di sisi front end.
+Tugas utama dari framework ini adalah mengirim dan menerima data, kemudian membuat tampilan UI (User Interface) yang menarik. Framework ini juga sangat mudah untuk diintegrasikan dengan library yang lain.
+Jika diimplementasikan pada komponen HTML, maka Vue JS menggunakan ID, class, atau name untuk menginisialisasikannya.
+Framework ini mengalami perkembangan yang pesat, bahkan beberapa perusahaan besar menggunakannya, sebagai contoh Google dan Adobe. Terlepas dari itu, Vue JS pertama kali dikembangkan pada tahun 2013 oleh Evan You yang sebelumnya bekerja di Google dengan menggunakan AngularJS.
+Hal itulah yang melatarbelakangi seorang Evan You mengembangkan sebuah library yang lebih ringan daripada AngularJS.
+
+\subsection{Fitur - fitur Vue JS}
+\begin{itemize}
+  \item Components
+  
+  Fitur components digunakan untuk membuat berbagai elemen pada HTML secara custom. Elemen custom ini juga dapat digunakan secara berulang – ulang.
+
+  \item Computed Properties
+  
+  Fitur computed properties digunakan untuk melihat setiap perubahan yang terjadi dalam elemen user interface tanpa harus melakukan penambahan kode di dalamnya.
+
+  \item Data Binding
+  
+  Data binding digunakan untuk memanipulasi dan memberikan nilai (value) pada atribut HTML. Sebagai contoh, mengubah style dengan menggunakan bantuan binding directives, yaitu V-Bind.
+
+  \item Directives
+  
+  Fitur directives berfungsi untuk melakukan berbagai aksi (action) pada antarmuka front end website. Contoh perintah bawaan yang digunakan adalah v-if, v-else, v-model, dan lainnya.
+
+  \item Event Handling
+  
+  Event handling atau v-on yang berfungsi sebagai atribut yang dapat ditambahkan ke dalam suatu elemen DOM untuk sebuah event pada Vue JS.
+
+  \item Lightweight
+  
+  Fitur lightweight yang digunakan untuk membuat menjadi lebih sederhana, akan tetapi masih tetap cepat dan powerful.
+
+  \item Routing
+  
+  Fitur routing mempunyai kegunaan sebagai perantara atau penghubung antar setiap halaman. Fitur ini memiliki kelebihan dalam membuat aplikasi single-page, cukup dengan menggunakan satu file HTML saja.
+
+  \item Template
+  
+  Fitur templates berfungsi untuk menghubungkan DOM dengan data instance pada Vue JS, yang nantinya akan mengkompilasi template menjadi fungsi DOM Render Virtual.
+
+  \item Virtual DOM
+  
+  DOM atau kependekan dari Document Object Model merupakan suatu interface yang memudahkan dalam mengakses atau menambah konten pada suatu dokumen. Fitur dari Virtual DOM berfungsi untuk menyimpan perubahan dokumen pada replika DOM, sehingga dapat di review lebih cepat setiap perubahannya.
+
+  \item Watchers
+  
+  Fitur watchers memiliki fungsi untuk dapat menangani setiap perubahan data, sehingga mampu untuk membuat kode menjadi sederhana dan cepat.
+
+
+
+\end{itemize}
+
+\section{Celery}
+
+Celery adalah system penggelola antrian (task-queue) yang menangani distribusi task pada workers.
+Celery membuat menajemen task asinkron menjadi mudah, aplikasi hanya perlu mempublish pesan ke broker seperti RabbitMQ.
+Celery dapat digunakan dalam berbagai konfigurasi.
+Salah satunya yang sering digunakan adalah mengelola task asinkron yang panjang pada sebuah aplikasi,
+contohnya seperti menangani data video yang diambil perframe dari sebuah aplikasi.
 % \section{Gravitasi}
 
 % Gravitasi merupakan \lipsum[18][1-10]
