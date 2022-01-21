@@ -5,10 +5,10 @@
 
 \section{Deskripsi Sistem}
 
-\texit{Smart ITS Face Recognition System} (Siffars) merupakan sistem pendeteksi wajah yang menggunakan \texit{facenet} sebagai basis model pendeteksi wajah.
-Input yang digunakan dalam Siffars adalah video yang berasal dari cctv ataupun \texit{webcam} yang bersifat \texit{real-time} maupun tidak. 
-Sedangkan input model \texit{facenet} yang digunakan adalah foto wajah yang telah di- \texit{crop} menggunakan \texit{face detector} dan di- \texit{encoding} menggunakan base64.
-Model \texit{facenet} akan menghasilkan \texit{vector embeddings} sepanjang 512 yang menginterpretasikan wajah yang telah terdeteksi.
+\textit{Smart ITS Face Recognition System} (Siffars) merupakan sistem pendeteksi wajah yang menggunakan \textit{facenet} sebagai basis model pendeteksi wajah.
+Input yang digunakan dalam Siffars adalah video yang berasal dari cctv ataupun \textit{webcam} yang bersifat \textit{real-time} maupun tidak. 
+Sedangkan input model \textit{facenet} yang digunakan adalah foto wajah yang telah di- \textit{crop} menggunakan \textit{face detector} dan di- \textit{encoding} menggunakan base64.
+Model \textit{facenet} akan menghasilkan \textit{vector embeddings} sepanjang 512 yang menginterpretasikan wajah yang telah terdeteksi.
 
 Berikut merupakan gambaran arsitektur dari Siffars:
 
@@ -17,14 +17,14 @@ Berikut merupakan gambaran arsitektur dari Siffars:
   % Nama dari file gambar yang diinputkan
   \includegraphics[scale=0.4]{gambar/sfa.png}
   % Keterangan gambar yang diinputkan
-  \caption{Arsitektur \texit{Smart ITS Face Recognition System}}
+  \caption{Arsitektur \textit{Smart ITS Face Recognition System}}
   % \citep{DiscoverySpaceShuttle}
   % Label referensi dari gambar yang diinputkan
   \label{fig:SpaceShuttle}
 \end{figure}
 
 \subsection{Spesifikasi Perangkat}
-Pada KP ini digunakan perangkat \texit{personal computer} sebagai berikut:
+Pada KP ini digunakan perangkat \textit{personal computer} sebagai berikut:
 \begin{itemize}
   \item Processor I5 gen 7
   \item GPU NVIDIA GTX 1650
@@ -36,24 +36,24 @@ Pada KP ini digunakan perangkat \texit{personal computer} sebagai berikut:
 \section{Implementasi Alat}
 
 Pada implementasi Siffars, kami mengimplementasikannya sebagai sistem presensi pegawai TU Departemen
-Teknik Komputer ITS. Menggunakan CCTV/ \texit{webcam} sebagai input videonya, Siffars dapat mendeteksi kehadiran untuk
-setiap pegawai berdasarkan kemiripan \texit{vector embeddings}. Sebelumnya, data wajah setiap pegawai harus
-disimpan dalam \texit{database} terlebih dahulu untuk dibandingkan dengan \texit{vector embeddings} ketika Siffars dijalankan.
+Teknik Komputer ITS. Menggunakan CCTV/ \textit{webcam} sebagai input videonya, Siffars dapat mendeteksi kehadiran untuk
+setiap pegawai berdasarkan kemiripan \textit{vector embeddings}. Sebelumnya, data wajah setiap pegawai harus
+disimpan dalam \textit{database} terlebih dahulu untuk dibandingkan dengan \textit{vector embeddings} ketika Siffars dijalankan.
 
-Proses instalasi Siffars memerlukan beberapa hal dan \texit{depedency} agar Siffars dapat berjalan dengan optimal.
+Proses instalasi Siffars memerlukan beberapa hal dan \textit{depedency} agar Siffars dapat berjalan dengan optimal.
 
 \subsection{Instalasi CCTV}
 \begin{itemize}
-  \item Sambungkan CCTV (Gambar \ref{fig:cctv}) dengan kabel LAN(RJ45) (Gambar \ref{fig:kabellan}) dan \texit{adaptor} (Gambar \ref{fig:adapter}) sebagai \texit{power supply}nya
-  \item Sambungkan \texit{Switch} (Gambar \ref{fig:switch}) dengan \texit{adaptor} (Gambar \ref{fig:adapter}) sebagai \texit{power supply} nya
-  \item Sambungkan NVR (Gambar \ref{fig:nvr}) dengan \texit{adaptor} (Gambar \ref{fig:adapter}) sebagai \texit{power supply}, dan sambungkan ke LCD/Monitor untuk mendapatkan tampilan CCTV
-  \item Sambungkan kabel LAN (Gambar \ref{fig:kabellan}) yang berasal dari CCTV (Gambar \ref{fig:cctv}) ke \texit{Switch} (Gambar \ref{fig:switch})
-  \item Sambungkan kabel LAN (Gambar \ref{fig:kabellan}) yang berasal dari \texit{switch} (Gambar \ref{fig:switch}) ke NVR (Gambar \ref{fig:nvr})
+  \item Sambungkan CCTV (Gambar \ref{fig:cctv}) dengan kabel LAN(RJ45) (Gambar \ref{fig:kabellan}) dan \textit{adaptor} (Gambar \ref{fig:adapter}) sebagai \textit{power supply}nya
+  \item Sambungkan \textit{Switch} (Gambar \ref{fig:switch}) dengan \textit{adaptor} (Gambar \ref{fig:adapter}) sebagai \textit{power supply} nya
+  \item Sambungkan NVR (Gambar \ref{fig:nvr}) dengan \textit{adaptor} (Gambar \ref{fig:adapter}) sebagai \textit{power supply}, dan sambungkan ke LCD/Monitor untuk mendapatkan tampilan CCTV
+  \item Sambungkan kabel LAN (Gambar \ref{fig:kabellan}) yang berasal dari CCTV (Gambar \ref{fig:cctv}) ke \textit{Switch} (Gambar \ref{fig:switch})
+  \item Sambungkan kabel LAN (Gambar \ref{fig:kabellan}) yang berasal dari \textit{switch} (Gambar \ref{fig:switch}) ke NVR (Gambar \ref{fig:nvr})
   \item Jika semuanya telah terkoneksi tampilan monitor akan menampilkan video tangkapan CCTV yang didapat
 \end{itemize}
 
 \subsection{Instalasi OpenCV-GPU}
-OpenCV yang di\texit{compile} dengan \texit{support} CUDA dibutuhkan untuk menjalankan SIFARS.
+OpenCV yang di\textit{compile} dengan \textit{support} CUDA dibutuhkan untuk menjalankan SIFARS.
 OpenCV Python yang biasa diperoleh dengan 
 \begin{lstlisting}
 pip install opencv-python 
@@ -148,9 +148,9 @@ pip install opencv-python
             -D BUILD_EXAMPLES=OFF ..
   \end{lstlisting}
 
-  Perlu diperhatikan CUDA ARCH BIN dalam \texit{script} diatas, disesuaikan dengan \texit{compute capability} masing-masing GPU, dalam KP ini menggunakan GPU NVIDIA GTX 1650.
+  Perlu diperhatikan CUDA ARCH BIN dalam \textit{script} diatas, disesuaikan dengan \textit{compute capability} masing-masing GPU, dalam KP ini menggunakan GPU NVIDIA GTX 1650.
 
-  \item Jika diperhatikan \texit{output} dari \texit{command} di atas, pada bagian akhir akan terlihat seperti berikut:
+  \item Jika diperhatikan \textit{output} dari \textit{command} di atas, pada bagian akhir akan terlihat seperti berikut:
   
   \begin{lstlisting}
     ...
@@ -188,57 +188,57 @@ pip install opencv-python
     -- Build files have been written to: /home/riset/opencv/build
   \end{lstlisting}
 
-  \item Bila bagian CUDA dan Python \texit{interpreter} yang dimaksud sudah sesuai, artinya konfigurasi sudah benar
-  \item Lakukan proses \texit{build} dengan
+  \item Bila bagian CUDA dan Python \textit{interpreter} yang dimaksud sudah sesuai, artinya konfigurasi sudah benar
+  \item Lakukan proses \textit{build} dengan
   
   \begin{lstlisting}
     make -j$(nproc)
   \end{lstlisting}
 
-  \item Setelah proses selesai, lakukan \texit{install} dengan:
+  \item Setelah proses selesai, lakukan \textit{install} dengan:
   
   \begin{lstlisting}
     sudo make install
   \end{lstlisting}
 
-  \item Lakukan \texit{symlinking} ke direktori \texit{environtment variable} conda dengan:
+  \item Lakukan \textit{symlinking} ke direktori \textit{environtment variable} conda dengan:
   
   \begin{lstlisting}
     ln -s /usr/local/lib/python3.6/site-packages/cv2 ~/miniconda3/envs/sf/lib/python3.6/site-packages/cv2
   \end{lstlisting}
 
-  \item Cek apakah OpenCV sudah ter\texit{install} dengan:
+  \item Cek apakah OpenCV sudah ter\textit{install} dengan:
   
   \begin{lstlisting}
     echo $(python -c "import cv2; print('Version: ', cv2.__version__);print('\n', cv2.getBuildInformation());")
   \end{lstlisting}
 
-  dan pastikan \texit{output} memberikan versi yang sama dengan versi OpenCV yang di\texit{download} tadi, dan pastikan terdapat baris yang menyatakan: NVIDIA CUDA: YES (ver 10.2 ...)
+  dan pastikan \textit{output} memberikan versi yang sama dengan versi OpenCV yang di\textit{download} tadi, dan pastikan terdapat baris yang menyatakan: NVIDIA CUDA: YES (ver 10.2 ...)
 
 \end{itemize}
 
 \subsection{Instalasi Siffars}
-\textbf{\texit{Requirements} dan \texit{setup}}
+\textbf{\textit{Requirements} dan \textit{setup}}
 
 \begin{itemize}
-  \item CUDA Toolkit 10.x (telah dites pada versi 10.0, 10.1, dan 10.2) dan cuDNN (versi disesuaikan CUDA Toolkit yang ter\texit{install})
+  \item CUDA Toolkit 10.x (telah dites pada versi 10.0, 10.1, dan 10.2) dan cuDNN (versi disesuaikan CUDA Toolkit yang ter\textit{install})
   \item Install \href{https://docs.docker.com/engine/install/ubuntu/}{Docker for Linux}
-  \item \texit{Add user} linux ke group docker untuk eksekusi tanpa sudo: sudo adduser "username" docker lalu \texit{reboot}
-  \item (Opsional) Install Miniconda3 lalu buat sebuah conda \texit{environment} dengan nama misal sf dengan versi Python 3.6:
+  \item \textit{Add user} linux ke group docker untuk eksekusi tanpa sudo: sudo adduser "username" docker lalu \textit{reboot}
+  \item (Opsional) Install Miniconda3 lalu buat sebuah conda \textit{environment} dengan nama misal sf dengan versi Python 3.6:
   
   \begin{lstlisting}
     $ conda create -n sf python=3.6
   \end{lstlisting}
 
   lalu aktivasi dengan conda activate sf.
-  NB: Conda bersifat opsional, boleh menggunakan \texit{virtualenv} atau \texit{environment manager} Python lain
+  NB: Conda bersifat opsional, boleh menggunakan \textit{virtualenv} atau \textit{environment manager} Python lain
 
-  \item Setelah aktivasi \texit{environment}, \texit{install} Numpy dengan
+  \item Setelah aktivasi \textit{environment}, \textit{install} Numpy dengan
   \begin{lstlisting}
     pip install numpy
   \end{lstlisting}  
 
-  \item \texit{Install} semua \texit{dependency} dengan:
+  \item \textit{Install} semua \textit{dependency} dengan:
   
   \begin{lstlisting}
     $ pip install -r requirements.txt
@@ -267,7 +267,7 @@ pip install opencv-python
   
   Buka terminal baru 
 
-  Create env untuk \texit{facenet} (hanya pertama kali):
+  Create env untuk \textit{facenet} (hanya pertama kali):
   \begin{lstlisting}
     $ conda create -n facenet python=3.8
   \end{lstlisting}
@@ -275,7 +275,7 @@ pip install opencv-python
   \begin{lstlisting}
     $ conda activate facenet
   \end{lstlisting}
-  Clone dan run \texit{facenet} dengan perintah:
+  Clone dan run \textit{facenet} dengan perintah:
   \begin{lstlisting}
 
     $ git clone https://github.com/Adiguna7/sf-facenet-api-final.git        
@@ -356,11 +356,11 @@ pip install opencv-python
 \subsection{Alur Penggunaan}
 Alur proses secara berurutan untuk penggunaan Siffars sebagai sistem absensi adalah sebagai berikut:
 \begin{enumerate}
-\item Menjalankan seluruh aplikasi dan \texit{database} yang digunakan untuk Siffars
-\item \texit{Admin} membuka halaman \texit{web} untuk \texit{register/login} jika sudah pernah mendaftar sebelumnya
-\item \texit{Admin} memilih menu "\texit{add person}" untuk menambahkan data wajah pegawai ke dalam \texit{database} Siffars (semakin banyak data wajah semakin akurat)
+\item Menjalankan seluruh aplikasi dan \textit{database} yang digunakan untuk Siffars
+\item \textit{Admin} membuka halaman \textit{web} untuk \textit{register/login} jika sudah pernah mendaftar sebelumnya
+\item \textit{Admin} memilih menu "\textit{add person}" untuk menambahkan data wajah pegawai ke dalam \textit{database} Siffars (semakin banyak data wajah semakin akurat)
 \item Sistem akan otomatis mendeteksi wajah pegawai yang telah ditambahkan
-dan nantinya akan ditampilkan ke \texit{web} saat pegawai tersebut terdeteksi.
+dan nantinya akan ditampilkan ke \textit{web} saat pegawai tersebut terdeteksi.
 \end{enumerate}
 
 % Contoh input gambar dengan format *.jpg
@@ -368,36 +368,36 @@ dan nantinya akan ditampilkan ke \texit{web} saat pegawai tersebut terdeteksi.
   % Nama dari file gambar yang diinputkan
   \includegraphics[scale=0.2]{gambar/register.png}
   % Keterangan gambar yang diinputkan
-  \caption{\texit{Page admin} untuk melakukan registrasi}
+  \caption{\textit{Page admin} untuk melakukan registrasi}
   % Label referensi dari gambar yang diinputkan
   \label{fig:SfRegis}
   
   \includegraphics[scale=0.2]{gambar/login.png}
-  \caption{\texit{Page admin} untuk melakukan \texit{login} (jika sudah pernah mendaftar sebelumnya)}
+  \caption{\textit{Page admin} untuk melakukan \textit{login} (jika sudah pernah mendaftar sebelumnya)}
   \label{fig:SfLogin}
 \end{figure}
 
 \begin{figure} [p] \centering
   \includegraphics[scale=0.2]{gambar/addpersonfix.png}
-  \caption{\texit{Page admin} untuk menambah data wajah pegawai}
+  \caption{\textit{Page admin} untuk menambah data wajah pegawai}
   \label{fig:SfAddperson}
 
   \includegraphics[scale=0.2]{gambar/listperson.png}
-  \caption{\texit{Page admin} untuk melihat data wajah pegawai}
+  \caption{\textit{Page admin} untuk melihat data wajah pegawai}
   \label{fig:SfListperson}
 
   \includegraphics[scale=0.2]{gambar/listface.png}
-  \caption{\texit{Page admin} untuk melihat data wajah tiap pegawai}
+  \caption{\textit{Page admin} untuk melihat data wajah tiap pegawai}
   \label{fig:SfListperson}
 \end{figure}
 
 \begin{figure} [p] \centering
   \includegraphics[scale=0.2]{gambar/listuser.png}
-  \caption{\texit{Page admin} untuk melihat \texit{data user} yang bisa mengakses \texit{web} Siffars}
+  \caption{\textit{Page admin} untuk melihat \textit{data user} yang bisa mengakses \textit{web} Siffars}
   \label{fig:SfListperson}
 
   \includegraphics[scale=0.2]{gambar/editaccount.png}
-  \caption{\texit{Page admin} untuk mengedit akun}
+  \caption{\textit{Page admin} untuk mengedit akun}
   \label{fig:SfListperson}
 
   \includegraphics[scale=0.1]{gambar/cctvcctv.jpg}
@@ -411,7 +411,7 @@ dan nantinya akan ditampilkan ke \texit{web} saat pegawai tersebut terdeteksi.
   \label{fig:kabellan}
 
   \includegraphics[scale=0.1]{gambar/cctvadapter.jpg}
-  \caption{\texit{Adaptor} untuk \texit{switch}, nvr, dan CCTV}
+  \caption{\textit{Adaptor} untuk \textit{switch}, nvr, dan CCTV}
   \label{fig:adapter}
 
   \includegraphics[scale=0.1]{gambar/cctvnvr.jpg}
